@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="CodeHim">
+  <title>Ngaprak Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href=".//css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="shortcut icon" href="./image/favicon.ico">
+</head>
+
+<body>
+
+  <!-- open navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg " id="home">
+    <div class="container">
+      <a class="navbar-brand" href="#aboutus"><img src="image/002.png" alt="" width="80px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="stroke nav-link active text-white" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" href="#aboutus">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" href="#product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  active text-white" href="#contact">Contact</a>
+          </li>
+
+          <!-- OPEN SEARCH BOX -->
+          <li>
+            <div class="search-box">
+              <input type="text" placeholder=" "/><span></span>
+            </div>            
+          </li>
+
+          
+          <!-- login button -->
+          <li class="nav-item active">
+            <button class="open-button" onclick="openForm()">
+              <img src="./image/account.png" alt="">
+            </button>
+          </li>
+          <!-- OPEN LOGIN POP UP -->
+            <div class="form-popup" id="myForm">
+              <form action="/action_page.php" class="form-container">
+                <h2 style="color: #FFFFFF; text-align: center;">Login</h2>
+                <input type="text" placeholder="Email" name="email" required>
+                <input type="password" placeholder="Password" name="psw" required>
+
+                <span style="font-size: 15px;" class="poppins mt-2 mb-5 mr-10">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1"><label
+                    class="form-check-label text-white" for="exampleCheck1" style="font-size: 15px;">Ingat saya</label>
+                </span>
+
+                <button type="button" class="btn" onclick="closeForm()">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+              </form>
+            </div>
+          <!-- -CLOSE LOGIN POP UP -->
+
+          <!-- OPEN CART POP UP -->
+          <li class="cart-btn">
+            <img src="./image/cart.png" alt="" id="cart" class="fas fa-shopping-cart" ><span class="cart-quantity">0</span>
+          </li>
+          <!-- Open cart modal -->
+            <div class="cart-modal-overlay">
+              <div class="cart-modal">
+                <i id="close-btn" class="fas fa-times"></i>
+                <h1 class="head-cart">Keranjang Belanja</h1>
+                <h1 class="cart-is-empty">Keranjang kosong</h1>
+
+                <div class="product-rows">
+                </div>
+                <div class="total">
+                  <h1 class="cart-total" style="font-size: 28px;">Total Harga</h1>
+                  <span class="total-price" style="font-size: 28px;">Rp0</span>
+                  <button class="purchase-btn" style="font-size: 28px;">Bayar</button>
+                </div>
+              </div>
+            </div>
+          <!--   end of cart modal -->
+          <!-- CLOSE CART POP UP -->
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <!-- close navbar -->
+
+  <!-- open banner -->
+  <div class="container mt-5 " id="home">
+    <div class="row top-display-about">
+      <div class="col-md-12">
+        <div class="row">
+
+          <!-- col left -->
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3 pt-3 mt-5" data-aos="fade-right">
+            <!-- text content -->
+            <h1 class="head-text-1">Ngaprak Store</h1>
+            <h3 class="head-text-2">Solusi Peralatan Outdoor</h3>
+
+            <!-- icon box -->
+            <div class="row">
+              <div class="col-md-12">
+              </div>
+              <a href="#product">
+                <button type="button" class="btn btn-started text-white">Beli Sekarang !</button>
+              </a>
+            </div>
+          </div>
+
+          <!-- col right -->
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3">
+            <div class="col.md-6">
+              <img src="./image/7400180.png" class="img-fluid-2" alt="" style="margin-top: 100px; margin-left: auto; " width="500px">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- close banner -->
+
+  <!-- open page about -->
+  <div class="class" id="aboutus"></div>
+  <div class="container mt-5 top-display">
+    <div class="title-1 mb-3" style="text-align: center; " data-aos="fade-down">
+      <h1>About Us</h1>
+    </div>
+    <div class="row top-display-about">
+      <div class="col-md-12">
+        <div class="row">
+
+          <!-- col left -->
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3" data-aos="fade-right">
+            <div class="logo-about col.md-6">
+              <img src="./image/logo-ngaprak-about.png" class="img-fluid-2" alt="">
+            </div>
+          </div>
+
+          <!-- col right -->
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3 pt-3" data-aos="fade-left">
+            <!-- text content -->
+            <h1 class="head-about-text-1">Ngaprak Store</h1>
+            <p class="text-about-1">
+              Ngaprak adalah Toko Alat Outdoor. Terinspirasi dari kami pemuda-pemuda penggiat kegiatan alam. Berawal
+              dari hobi yang menjelma menjadi sebuah ide cemerlang.
+            </p>
+            <p class="text-about-2 ">
+              Kami hadir menyediakan berbagai Peralatan Outdoor yang siap menemani petualangan kamu di Alam Terbuka.
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- close page about -->
+
+  <!-- open page product menu -->
+  <div class="class" id="product"></div>
+  <div class="container mt-5 top-display col-sm-12 col-md-12 col-lg-6 mb-3 pt-3">
+    <div class="title-1 mb-3" style="text-align: center;" data-aos="fade-down">
+      <h1>Product</h1>
+    </div>
+    <div class="row top-display-product">
+      <div class="col-md-12 ">
+
+        <div class="row">
+          <div class="col" data-aos="zoom-in-up">
+            <a href="#p-x">
+              <img src="./image/bag.png" class="img-fluid" alt="">
+            </a>
+            <h2 class="text-product">Tas Carrier</h2>
+          </div>
+
+          <div class="col" data-aos="zoom-in-up">
+            <a href="#p-a">
+              <img src="./image/jacket.png" class="img-fluid" alt="">
+            </a>
+            <h2 class="text-product">Jaket</h2>
+          </div>
+
+          <div class="col" data-aos="zoom-in-up">
+            <a href="#p-b">
+              <img src="./image/shoes.png" class="img-fluid" alt="">
+            </a>
+            <h2 class="text-product">Sepatu</h2>
+          </div>
+        </div>
+
+        <div class="row ">
+          <div class="col " data-aos="zoom-in-up">
+            <a href="#p-c">
+              <img src="./image/sleeping-bag.png" class="img-fluid" alt="">
+            </a>
+            <h2 class="text-product">Sleeping Bag</h2>
+          </div>
+
+          <div class="col" data-aos="zoom-in-up">
+            <a href="#p-d">
+              <img src="./image/tent.png" class="img-fluid" alt="">
+            </a>
+            <h2 class="text-product">Tenda</h2>
+          </div>
+
+          <div class="col" data-aos="zoom-in-up">
+            <a href="#p-e">
+              <img src="./image/knife.png" class="img-fluid" alt="">
+            </a>
+            <h2 class="text-product" id="p-x">Lainnya</h2>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- close page product menu -->
+
+  <!-- open page product -->
+  <div class="container top-display ">
+    <div class="row group-card top-display-packages">
+      
+      <!-- product a - carrier -->
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" id="" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-a1.html" title="klik untuk detail">
+              <img class="product-image card-img-top" src="./image/product/group-p-1/a-1.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">1100000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">EIGER ECOSAVIOR 45 WS CARRIER WHITE
+            <br> 
+          </p>
+          <div class="text-price-card text-orange">Rp1.100.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-a2.html" title="klik untuk detail">
+              <img class="product-image card-img-top" src="./image/product/group-p-1/a-2.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">1000000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">EIGER RHINOS 45L 1A
+            <br> CARRIER
+          </p>
+          <div class="text-price-card text-orange">Rp1.000.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-a3.html" title="klik untuk detail">
+              <img class="product-image card-img-top" src="./image/product/group-p-1/a-3.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">500000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">AREI BOREALIS 40L
+            <br> CARRIER
+          </p>
+          <div class="text-price-card text-orange">Rp500.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" id="p-a" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-a4.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-1/a-4.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">620000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">FORESTER 90065
+            <br> TECTONA CARRIER
+          </p>
+          <div class="text-price-card text-orange">Rp620.000,-</div>
+        </div>
+      </div>
+
+      <!-- product b - jaket -->
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-b1.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-2/b-1.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">360000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">CONSINA VERMILON
+            <br> JAKET
+          </p>
+          <div class="text-price-card text-orange">Rp360.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-b2.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-2/b-2.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">200000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">JAKET FUPPER
+            <br> THE NORTH FACE
+          </p>
+          <div class="text-price-card text-orange">Rp200.000,-</div>
+        </div>
+      </div>
+
+      
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-b3.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-2/b-3.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">580000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">EIGER J.PERSEVERANCE 1.0
+            <br> JACKET
+          </p>
+          <div class="text-price-card text-orange">Rp580.000,-</div>
+        </div>
+      </div>
+
+     
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" id="p-b" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-b4.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-2/b-4.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">400000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">ACTECH JAKET
+            <br> WINDBREAKER 
+          </p>
+          <div class="text-price-card text-orange">Rp400.000,-</div>
+        </div>
+      </div>
+
+      <!-- product c - sepatu -->
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-c1.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-3/c-1.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">645000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">FORESTER SPTR 005
+            <br> TRCKING
+          </p>
+          <div class="text-price-card text-orange">Rp645.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-c2.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-3/c-2.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">185000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">JACK WOLFSKIN
+            <br> SHOES
+          </p>
+          <div class="text-price-card text-orange">Rp185.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-c3.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-3/c-3.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">890000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">SEPATU GUNUNG ARIZONA
+            <br>AREI OUTDOORGEAR
+          </p>
+          <div class="text-price-card text-orange">Rp890.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" id="p-c" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-c4.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-3/c-4.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">1270000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">EIGER POLLOCK 2.0 28
+            <br>GUNUNG SHOES
+          </p>
+          <div class="text-price-card text-orange">Rp1.270.000,-</div>
+        </div>
+      </div>
+
+      <!-- product d - sb -->
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-d1.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-4/d-1.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">100000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">SLEEPING BAG
+            <br> SUMMIT SERIES
+          </p>
+          <div class="text-price-card text-orange">Rp100.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-d2.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-4/d-2.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">160000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">SLEEPING BAG MUMMY
+            <br> WATERMOUNT
+          </p>
+          <div class="text-price-card text-orange">Rp160.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-d3.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-4/d-3.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">170000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">SLEEPING BAG
+            <br> COZMEED
+          </p>
+          <div class="text-price-card text-orange">Rp170.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" id="p-d" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-d4.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-4/d-4.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">760000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">EIGER SLEEP SACK
+            <br> 1000
+          </p>
+          <div class="text-price-card text-orange">Rp760.000,-</div>
+        </div>
+      </div>
+
+      <!-- product e - tenda -->
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-e1.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-5/e-1.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">525000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title"> TENDAKI BORNEO 4
+            <br> 4-5 ORANG
+          </p>
+          <div class="text-price-card text-orange">Rp525.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-e2.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-5/e-2.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">900000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">TENDAKI MOLUCCAS 6
+            <br> 6-8 ORANG
+          </p>
+          <div class="text-price-card text-orange">Rp900.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-e3.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-5/e-3.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">300000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">FORESTER TDF 004 TENDA
+            <br> 2 ORANG
+          </p>
+          <div class="text-price-card text-orange">Rp300.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" id="p-e" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-e4.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-5/e-4.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">600000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">TENDA AREILIOT
+            <br> 4 ORANG
+          </p>
+          <div class="text-price-card text-orange">Rp600.000,-</div>
+        </div>
+      </div>
+
+      <!-- product f - lainnya -->
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-f1.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-6/f-1.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">20000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title">HEAD LAMP COB
+            <br> RECHARGEABLE
+          </p>
+          <div class="text-price-card text-orange">Rp20.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-f2.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-6/f-2.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">100000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">COOKING SET
+            <br>CAMPING
+          </p>
+          <div class="text-price-card text-orange">Rp100.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-f3.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-6/f-3.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">20000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">HICOOK
+            <br>TABUNG GAS
+          </p>
+          <div class="text-price-card text-orange">Rp20.000,-</div>
+        </div>
+      </div>
+
+      <div class="items-container col-12 col-sm-12 col-md-12 col-lg-3 mb-3" style="margin-top: 12px;" data-aos="zoom-in-up">
+        <div class="card-1 card" style="width: 0.25rem-1px;border: 0;">
+            <a href="./detail/product-f4.html">
+              <img class="product-image card-img-top" src="./image/product/group-p-6/f-4.png" alt="...">
+            </a>
+            <button class="add-to-cart"><img src="image/cart.png" alt="">+</button>
+            <span class="product-price" style="display: none;">50000</span>
+        </div>
+        <div class="card-body">
+          <p class="card-title ">KOMPOR PORTABLE
+            <br>KOVAR
+          </p>
+          <div class="text-price-card text-orange">Rp50.000,-</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- close product -->
+
+  <!-- open contact  -->
+  <div class="class" id="contact"></div>
+  <div class="container top-display">
+    <div class="row top-display-contact">
+      <div class="col-md-12 text-center mb-4" data-aos="zoom-in-up">
+        <h1 class="title-1 ">Contact</h1>
+      </div>
+    </div>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.687568419615!2d106.67897717472049!3d-6.561064964138007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69db77451a55e9%3A0xcca81d3464849613!2sJl.%20Arjuna%2C%20Leuweung%20Kolot%2C%20Kec.%20Cibungbulang%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016630!5e0!3m2!1sid!2sid!4v1681518630524!5m2!1sid!2sid"
+      width="100%" height="250px" style="border:0; margin-bottom: 20px; " allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <div class="container mt-3 ml-0 mr-0" data-aos="zoom-in-up">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col contact-icon">
+            <a href="https://instagram.com/ngapraak_id?igshid=ZDdkNTZiNTM=" target="_blank" rel="noopener noreferrer">
+              <img src="./image/instagram.png" alt="" style="display:block; margin:auto;">
+            </a>
+          </div>
+          <div class="col contact-icon">
+            <a href="https://wa.me/+6285777485824?text=hallo%20saya%20tertarik%20dengan%20product%20dari%20ngaprak"
+              target="_blank" rel="noopener noreferrer">
+              <img src="./image/whatsapp.png" alt="" style="display:block; margin:auto;">
+            </a>
+          </div>
+          <div class="col contact-icon">
+            <a href="mailto:mh642859@gmail.com?text=hallo%20saya%20tertarik%20dengan%20product%20dari%20ngaprak"
+              target="_blank" rel="noopener noreferrer">
+              <img src="./image/email.png" alt="" style="display:block; margin:auto;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- close contact -->
+
+  <!-- open footer -->
+  <footer class="top-display" id="footer">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col ">
+          <br>
+          <br>
+          <br>
+          <a class="foot-link active text-white" href="#footer" style="text-decoration:none">HUBUNGI KAMI</a>
+          <a class="foot-link active text-white"
+            href="https://wa.me/+6285777485824?text=hallo%20saya%20tertarik%20dengan%20product%20dari%20ngaprak"
+            target="_blank" rel="noopener noreferrer" style="text-decoration:none">Whatsapp</a>
+          <a class="foot-link active text-white" href="mailto:mh642859@gmail.com?text=hallo%20saya%20tertarik%20dengan%20product%20dari%20ngaprak" 
+            style="text-decoration:none">Email</a>
+          <a class="foot-link active text-white" href="https://instagram.com/ngapraak_id?igshid=ZDdkNTZiNTM="
+            target="_blank" rel="noopener noreferrer" style="text-decoration:none">Instagram</a>
+        </div>
+        <div class="col">
+          <br>
+          <br>
+          <a class="foot-link active text-white" href="#footer" style="text-decoration:none">NGAPRAK</a>
+          <a class="foot-link active text-white" href="#aboutus" style="text-decoration:none">Tentang Kami</a>
+          <a class="foot-link active text-white" href="#contact" style="text-decoration:none">Lokasi</a>
+ 
+        </div>
+        <div class="col">
+          <br>
+          <a class="foot-link active text-white" href="#footer" style="text-decoration:none">LAYANAN PELANGGAN</a>
+          <a class="foot-link active text-white" href="#footer" style="text-decoration:none">09.00-17.00 WIB</a>
+        </div>
+        <h6>&#169;2023 Copyright Ngaprak Store </h6>
+      </div>
+    </div>
+  </footer>
+
+  <!-- script js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+  
+  <script src="./js/myscript.js"></script>
+
+</body>
+
+</html>
